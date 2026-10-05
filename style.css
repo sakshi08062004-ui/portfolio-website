@@ -1,0 +1,1873 @@
+/* =========================================================
+   DEVPORTFOLIO
+   DEVOPS ENGINEER - COMPLETE STYLE.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f6f8fc;
+    color: #172033;
+    line-height: 1.6;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   2. DARK MODE
+   ========================================================= */
+
+body.dark {
+    background: #070b14;
+    color: #f5f7ff;
+}
+
+body.dark .navbar {
+    background: rgba(7, 11, 20, 0.90);
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .skill,
+body.dark .project {
+    background: #101624;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .section-text,
+body.dark .hero-description,
+body.dark .project p,
+body.dark .skill p {
+    color: #aab2c5;
+}
+
+body.dark input,
+body.dark textarea {
+    background: #111827;
+    color: white;
+    border-color: #30384d;
+}
+
+body.dark .nav-links a {
+    color: #d7dce8;
+}
+
+body.dark .nav-links a:hover,
+body.dark .nav-links a.active {
+    color: #8b5cf6;
+}
+
+
+/* =========================================================
+   3. HEADER
+   ========================================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   4. NAVBAR
+   ========================================================= */
+
+.navbar {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #6366f1;
+}
+
+
+/* Navigation */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: inherit;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+}
+
+
+/* Navigation underline */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #ec4899
+    );
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #6366f1;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   5. DARK MODE BUTTON
+   ========================================================= */
+
+.theme-btn {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #6366f1;
+
+    color: white;
+
+    font-size: 17px;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 8px 20px rgba(99, 102, 241, 0.25);
+}
+
+.theme-btn:hover {
+    transform: rotate(20deg) scale(1.08);
+
+    background: #4f46e5;
+}
+
+
+/* =========================================================
+   6. MOBILE MENU
+   ========================================================= */
+
+.menu-btn {
+    display: none;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-size: 27px;
+}
+
+
+/* =========================================================
+   7. HERO SECTION
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: calc(100vh - 78px);
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 80px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 70px;
+
+    overflow: hidden;
+}
+
+
+/* Hero background glow */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    left: -150px;
+    top: 80px;
+
+    background: #6366f1;
+
+    opacity: 0.10;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    z-index: -1;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -120px;
+    bottom: 30px;
+
+    background: #ec4899;
+
+    opacity: 0.08;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   8. HERO TEXT
+   ========================================================= */
+
+.hero-text {
+    flex: 1;
+
+    max-width: 680px;
+
+    animation: slideLeft 0.9s ease;
+}
+
+.small-text {
+    color: #6366f1;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 78px);
+
+    line-height: 1.03;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1 0%,
+        #8b5cf6 45%,
+        #ec4899 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    color: #667085;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   9. DEVOPS BADGES
+   ========================================================= */
+
+.devops-skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+}
+
+.devops-skills span {
+    padding: 8px 14px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    color: #475569;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.05);
+
+    transition: 0.3s ease;
+}
+
+.devops-skills span:hover {
+    transform: translateY(-3px);
+
+    color: #6366f1;
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.15);
+}
+
+body.dark .devops-skills span {
+    background: #111827;
+
+    color: #cbd5e1;
+
+    border-color: #252c42;
+}
+
+
+/* =========================================================
+   10. BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 25px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6
+    );
+
+    color: white;
+
+    border: none;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.25);
+
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(99, 102, 241, 0.35);
+}
+
+.btn.secondary {
+    background: transparent;
+
+    color: #6366f1;
+
+    border: 1px solid #6366f1;
+
+    box-shadow: none;
+}
+
+.btn.secondary:hover {
+    background: #6366f1;
+
+    color: white;
+}
+
+
+/* =========================================================
+   11. HERO TERMINAL
+   ========================================================= */
+
+.hero-card {
+    flex: 1;
+
+    width: 100%;
+    max-width: 500px;
+
+    animation:
+        slideRight 0.9s ease,
+        float 5s ease-in-out infinite;
+}
+
+
+/* Terminal */
+
+.code-card {
+    position: relative;
+
+    width: 100%;
+
+    background: #0b1020;
+
+    border: 1px solid #252c42;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    color: white;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.30);
+}
+
+
+/* Terminal top */
+
+.terminal-header {
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 18px;
+
+    background: #11172a;
+
+    border-bottom: 1px solid #252c42;
+}
+
+.terminal-dots {
+    display: flex;
+
+    gap: 7px;
+}
+
+.terminal-dots span {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #475569;
+}
+
+.terminal-title {
+    flex: 1;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    font-family: monospace;
+}
+
+
+/* Terminal body */
+
+.terminal-body {
+    padding: 28px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 13px;
+}
+
+.terminal-line {
+    color: #e2e8f0;
+
+    margin-bottom: 9px;
+}
+
+.terminal-success {
+    color: #22c55e;
+
+    margin-bottom: 17px;
+}
+
+.terminal-info {
+    color: #38bdf8;
+
+    margin-bottom: 8px;
+}
+
+.terminal-warning {
+    color: #f59e0b;
+}
+
+
+/* Cursor */
+
+.cursor {
+    display: inline-block;
+
+    width: 8px;
+    height: 16px;
+
+    margin-left: 2px;
+
+    background: #22c55e;
+
+    vertical-align: middle;
+
+    animation: blink 1s infinite;
+}
+
+
+/* =========================================================
+   12. PIPELINE
+   ========================================================= */
+
+.pipeline {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    padding: 18px;
+
+    background: #11172a;
+
+    border-top: 1px solid #252c42;
+
+    color: #a5b4fc;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+.pipeline .arrow {
+    color: #6366f1;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   13. COMMON SECTIONS
+   ========================================================= */
+
+.section,
+.page-section {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 100px 30px;
+}
+
+.section h2,
+.page-section h1 {
+    text-align: center;
+
+    font-size: 44px;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 20px;
+}
+
+.section h2::after,
+.page-section h1::after {
+    content: "";
+
+    display: block;
+
+    width: 60px;
+    height: 4px;
+
+    margin: 15px auto 35px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #ec4899
+    );
+}
+
+.section-text {
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+
+    color: #667085;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   14. PAGE HEADING
+   ========================================================= */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+.section-heading h1 {
+    font-size: clamp(40px, 6vw, 58px);
+
+    margin: 10px 0 15px;
+
+    letter-spacing: -2px;
+}
+
+.section-heading h1 span {
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* =========================================================
+   15. SKILLS
+   ========================================================= */
+
+.skills {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: 40px auto 0;
+}
+
+.skill {
+    position: relative;
+
+    padding: 28px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.06);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Skill top gradient */
+
+.skill::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.4s ease;
+}
+
+.skill:hover::before {
+    transform: scaleX(1);
+}
+
+.skill:hover {
+    transform: translateY(-8px);
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 20px 45px rgba(99, 102, 241, 0.15);
+}
+
+
+/* Skill top */
+
+.skill-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.skill-top h3 {
+    font-size: 21px;
+
+    margin: 0;
+}
+
+.skill-category {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #6366f1;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+
+/* Skill icon */
+
+.skill-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    font-weight: 900;
+
+    transition: 0.3s ease;
+}
+
+.skill:hover .skill-icon {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+
+/* Skill icons */
+
+.html-icon {
+    background: #fff1ec;
+    color: #e34f26;
+
+    font-family: monospace;
+
+    font-size: 17px;
+}
+
+.css-icon {
+    background: #eef5ff;
+    color: #1572b6;
+
+    font-family: monospace;
+
+    font-size: 23px;
+}
+
+.js-icon {
+    background: #fff9d9;
+    color: #a68b00;
+
+    font-size: 14px;
+}
+
+.github-icon {
+    background: #f1f3f5;
+    color: #24292f;
+
+    font-size: 13px;
+}
+
+.docker-icon {
+    background: #e8f7ff;
+    color: #2496ed;
+
+    font-size: 27px;
+}
+
+.cicd-icon {
+    background: #f0edff;
+    color: #6366f1;
+
+    font-size: 28px;
+}
+
+.jenkins-icon {
+    background: #fff0ec;
+    color: #d33833;
+
+    font-size: 26px;
+}
+
+.kubernetes-icon {
+    background: #edf4ff;
+    color: #326ce5;
+
+    font-size: 30px;
+}
+
+
+/* Skill description */
+
+.skill > p {
+    color: #667085;
+
+    font-size: 14px;
+
+    min-height: 45px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Progress */
+
+.progress {
+    width: 100%;
+
+    height: 8px;
+
+    background: #e8ebf2;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+
+    animation: progressAnimation 1.5s ease;
+}
+
+
+/* Skill percentage */
+
+.skill-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 9px;
+
+    font-size: 12px;
+}
+
+.skill-bottom span {
+    color: #64748b;
+}
+
+.skill-bottom strong {
+    color: #6366f1;
+}
+
+
+/* =========================================================
+   16. DEVOPS WORKFLOW
+   ========================================================= */
+
+.devops-pipeline {
+    max-width: 1000px;
+
+    margin: 60px auto 0;
+
+    padding: 30px;
+
+    background: #0b1020;
+
+    border: 1px solid #252c42;
+
+    border-radius: 20px;
+
+    color: white;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.18);
+}
+
+.pipeline-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #e2e8f0;
+}
+
+.pipeline-title span {
+    color: #f59e0b;
+}
+
+.pipeline-flow {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.pipeline-step {
+    min-width: 115px;
+
+    padding: 15px 12px;
+
+    text-align: center;
+
+    background: #11172a;
+
+    border: 1px solid #252c42;
+
+    border-radius: 12px;
+
+    transition: 0.3s ease;
+}
+
+.pipeline-step:hover {
+    transform: translateY(-5px);
+
+    border-color: #6366f1;
+
+    box-shadow:
+        0 10px 25px rgba(99, 102, 241, 0.20);
+}
+
+.pipeline-step span {
+    display: block;
+
+    color: #6366f1;
+
+    font-size: 11px;
+
+    margin-bottom: 5px;
+}
+
+.pipeline-step strong {
+    display: block;
+
+    font-size: 13px;
+
+    letter-spacing: 0.5px;
+}
+
+.pipeline-step small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #94a3b8;
+
+    font-size: 11px;
+}
+
+.pipeline-arrow {
+    color: #8b5cf6;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   17. PROJECTS
+   ========================================================= */
+
+.projects {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 40px;
+}
+
+.project {
+    position: relative;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #e8ebf2;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(20, 30, 60, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 4px;
+
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(
+        90deg,
+        #6366f1,
+        #ec4899
+    );
+}
+
+.project:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 45px rgba(20, 30, 60, 0.12);
+}
+
+.project-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #f0efff;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.project p {
+    color: #667085;
+
+    margin-bottom: 20px;
+}
+
+.details-btn {
+    border: none;
+
+    background: none;
+
+    color: #6366f1;
+
+    font-weight: 700;
+
+    padding: 0;
+
+    transition: 0.3s;
+}
+
+.details-btn:hover {
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   18. FILTER BUTTONS
+   ========================================================= */
+
+.filter-buttons {
+    text-align: center;
+
+    margin: 35px 0;
+}
+
+.filter {
+    border: 1px solid #ddd;
+
+    background: white;
+
+    color: #333;
+
+    padding: 10px 20px;
+
+    margin: 5px;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.filter:hover,
+.filter.active {
+    background: #6366f1;
+
+    color: white;
+
+    border-color: #6366f1;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   19. ABOUT
+   ========================================================= */
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+    margin-top: 40px;
+}
+
+.about-text h2 {
+    font-size: 36px;
+
+    margin-bottom: 18px;
+}
+
+.about-text h2 span {
+    color: #6366f1;
+}
+
+.about-text p {
+    color: #667085;
+
+    margin-bottom: 18px;
+}
+
+.about-card {
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.06);
+}
+
+.about-card h3 {
+    color: #6366f1;
+
+    margin-bottom: 18px;
+}
+
+.about-list {
+    list-style: none;
+}
+
+.about-list li {
+    padding: 10px 0;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   20. CONTACT
+   ========================================================= */
+
+#contactForm {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 40px auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    border: 1px solid #dfe3eb;
+
+    border-radius: 12px;
+
+    background: white;
+
+    color: #172033;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+textarea {
+    min-height: 160px;
+
+    resize: vertical;
+}
+
+#formMessage {
+    text-align: center;
+
+    color: #6366f1;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   21. FOOTER
+   ========================================================= */
+
+footer {
+    padding: 35px 20px;
+
+    margin-top: 50px;
+
+    text-align: center;
+
+    background: #0b1020;
+
+    color: #94a3b8;
+
+    border-top: 1px solid #252c42;
+}
+
+footer span {
+    color: #8b5cf6;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   22. MODAL
+   ========================================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    backdrop-filter: blur(5px);
+}
+
+.modal.show {
+    display: flex;
+
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 550px;
+
+    padding: 40px;
+
+    background: white;
+
+    color: #172033;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.3);
+
+    animation: modalUp 0.3s ease;
+}
+
+body.dark .modal-content {
+    background: #111624;
+
+    color: white;
+}
+
+#closeModal {
+    position: absolute;
+
+    top: 12px;
+    right: 18px;
+
+    border: none;
+
+    background: none;
+
+    color: inherit;
+
+    font-size: 32px;
+}
+
+
+/* =========================================================
+   23. ANIMATIONS
+   ========================================================= */
+
+@keyframes slideLeft {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes slideRight {
+
+    from {
+        opacity: 0;
+
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+@keyframes progressAnimation {
+
+    from {
+        width: 0;
+    }
+
+}
+
+
+@keyframes devopsProgress {
+
+    from {
+        width: 0;
+    }
+
+}
+
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes modalUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   24. TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .hero {
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   25. MOBILE NAVBAR
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        padding: 16px 20px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        background: white;
+
+        border-bottom: 1px solid #e5e7eb;
+
+        box-shadow:
+            0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    body.dark .nav-links {
+        background: #0b1020;
+
+        border-color: #252c42;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding-top: 60px;
+
+        min-height: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .devops-skills {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-card {
+        width: 100%;
+
+        max-width: 500px;
+    }
+
+
+    /* Skills */
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Projects */
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Pipeline */
+
+    .devops-pipeline {
+        padding: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   26. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 550px) {
+
+    .logo {
+        font-size: 22px;
+    }
+
+
+    .hero {
+        padding:
+            50px
+            20px
+            70px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    .section,
+    .page-section {
+        padding:
+            70px
+            20px;
+    }
+
+    .section h2,
+    .page-section h1 {
+        font-size: 36px;
+    }
+
+
+    /* Terminal */
+
+    .code-card {
+        border-radius: 14px;
+    }
+
+    .terminal-body {
+        padding: 20px;
+
+        font-size: 11px;
+    }
+
+    .terminal-title {
+        font-size: 10px;
+    }
+
+
+    /* Pipeline */
+
+    .pipeline {
+        font-size: 9px;
+
+        gap: 6px;
+    }
+
+
+    /* Skills */
+
+    .skill {
+        padding: 22px;
+    }
+
+    .skill-icon {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    /* DevOps Workflow */
+
+    .pipeline-flow {
+        flex-direction: column;
+    }
+
+    .pipeline-step {
+        width: 100%;
+    }
+
+    .pipeline-arrow {
+        transform: rotate(90deg);
+    }
+
+
+    /* Modal */
+
+    .modal-content {
+        padding: 30px 22px;
+    }
+
+}
